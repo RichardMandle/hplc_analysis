@@ -29,9 +29,29 @@ pip install numpy matplotlib scipy pandas
 
 ## Usage
 
-The script supports both single-file analysis and batch processing of all CSV files in a directory.
+The script supports both single-file analysis and batch processing of all CSV files in a directory. Allows baseline correction with rolling ball, threshold and distance based peak=picking, report generation etc... The options are fairly self explanatory:<br>
 
-### Command-Line Arguments
+
+### GUI (python gui_app.py)
+This launches the GUI which is pretty user friendly. Click "Load CSV Files" to load some data, you can have multiple files open and only the selected one(s) will be shown in the preview at right:
+
+
+| Argument                     | Description                                                                                      
+|------------------------------|-------------------------------------------------------------------------------------------------|
+| `--nt <float>`               | Normalization time for spectra.                                                                 | 
+| `--x_start <float>`          | Start of x-range (time) for analysis.                                                           | 
+| `--x_end <float>`            | End of x-range (time) for analysis.                                                             | 
+| `--baseline_radius <int>`    | Radius for rolling ball baseline correction.                                                    | 
+| `--peak_distance <int>`      | Minimum distance between peaks.                                                                 |
+| `--relative_height <float>`  | Relative height for measuring peak width (e.g., 0.5 for full-width at half maximum).            |
+| `--threshold <float>`        | Minimum height required for a peak to be considered.                                            | 
+| `--baseline correction`      | Enable/Disable baseline correction.                                                             | 
+| `--raw offset <float>`       | Offset raw data by a specified amount to aid visualization.                                     |
+
+It looks something like this:
+<img width="938" height="875" alt="image" src="https://github.com/user-attachments/assets/c1ec724a-0d36-4f7e-93ca-75458338717b" />
+
+### Command-Line Arguments (python hplc_analysis.py)
 
 | Argument                     | Description                                                                                       | Default        |
 |------------------------------|---------------------------------------------------------------------------------------------------|----------------|
